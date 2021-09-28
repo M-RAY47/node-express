@@ -11,6 +11,13 @@ app.use("/public", express.static(__dirname + "/public"));
 // Server the styles.css file
 app.use(express.static(__dirname + "/public/style.css"));
 
+// Creating a REST API 
+app.get("/json", (req, res)=> {
+	res.json({
+		"message": "Hello json"
+	});
+})
+
 
 
 
