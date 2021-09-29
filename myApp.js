@@ -9,7 +9,7 @@ app.get("/", (req, res)=> {
 app.use((req,res,next)=>{
 	let {method, path, ip} =req;
 	let str = req.method + " " + req.path + " - " + req.ip;
-	console.lof(str);
+	console.log(str);
 	next();
 })
 
