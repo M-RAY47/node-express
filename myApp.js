@@ -13,13 +13,11 @@ app.use(express.static(__dirname + "/public/style.css"));
 
 // Creating a REST API 
 app.get("/json", (req, res)=> {
-	res.json(
-		process.env["MESSAGE_STYLE"] === "uppercase" ? {
-			"message": "Hello json"
-		} :{
-			"message": "Hello json".toUpperCase()
-		}
-	);
+	res.json({
+		"message": process.env["MESSAGE_STYLE"] == "uppercase" ? 
+		"Hello json".toUpperCase()
+		:  "Hello json"
+	});
 })
 
 
