@@ -8,7 +8,7 @@ app.get("/", (req, res)=> {
 // Implement the midlleware functions to print the method, the path and the ip
 app.use((req,res,next)=>{
 	let {method, path, ip} =req;
-	let str = req.method + " " + req.path + "-" + req.ip;
+	let str = req.method + " " + req.path + " - " + req.ip;
 	console.lof(str);
 	next();
 })
