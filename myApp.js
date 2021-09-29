@@ -5,11 +5,17 @@ console.log("Hello World");
 app.get("/", (req, res)=> {
 	res.sendFile(__dirname + "/views/index.html");
 })
+// Implement the midlleware functions to print the method, the path and the ip
+app.use((req,res,next)=>{
+	let {method, path, ip} =req;
+	let str = req.method + " " + req.path + "-" + req.ip;
+	console.lof(str);
+	next();
+})
 
 // mount the full path of the style.css file
 app.use("/public", express.static(__dirname + "/public"));
-// Server the styles.css file
-app.use(express.static(__dirname + "/public/style.css"));
+
 
 // Creating a REST API 
 app.get("/json", (req, res)=> {
