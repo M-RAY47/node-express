@@ -26,7 +26,13 @@ app.get("/json", (req, res)=> {
 	});
 })
 // Chaining two midwares function together app.METHOD(path, midware)
-
+app.get("/now", (req, res, next)=> {
+	req.time = new Date().toString();
+	next();
+	(req, res)=> {
+		res.send({"time": req.time});
+	}
+})
 
 
 
