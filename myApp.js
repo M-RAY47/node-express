@@ -25,10 +25,7 @@ app.get("/json", (req, res)=> {
 		:  "Hello json"
 	});
 })
-
-
-
-
+// Chaining two midwares function together app.METHOD(path, midware)
 
 
 
