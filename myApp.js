@@ -32,7 +32,13 @@ app.get("/now", (req, res, next)=> {
 },
 	(req, res)=> {
 		res.send({time: req.time});
-	
+})
+
+app.get("/:word/echo", (req,res) => {
+	let {echo} = req.params;
+	res.json({
+		echo: word
+	});
 })
 
 
