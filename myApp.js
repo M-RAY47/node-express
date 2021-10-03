@@ -38,7 +38,7 @@ app.get("/:word/echo", (req,res) => {
 	//creating the params
 	let {word} = req.params;
 	res.json({
-		echo: word
+		echo: req.params.word
 	});
 })
 
