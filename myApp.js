@@ -42,6 +42,15 @@ app.get("/:word/echo", (req,res) => {
 	});
 })
 
+app.get("/name", (req, res) => {
+    let firstName = req.query.first;
+    let lastName = req.query.last;
+// Using template literature
+	 res.json({
+      name: `${firstName} ${lastName}`
+      });
+  })
+
 
 
 
