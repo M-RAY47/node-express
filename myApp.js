@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+ //import body-parser
+ let bodyParser = require('body-parser');
 
 console.log("Hello World");
 app.get("/", (req, res)=> {
@@ -50,6 +52,10 @@ app.get("/name", (req, res) => {
       name: `${firstName} ${lastName}`
       });
   })
+
+  // using body-parser to parse some string values
+  app.use(bodyParser.urlencoded({extended: false}));
+  
 
 
 
