@@ -51,11 +51,15 @@ app.get("/name", (req, res) => {
 	 res.json({
       name: `${firstName} ${lastName}`
       });
-  })
+  });
 
   // using body-parser to parse some string values
   app.use(bodyParser.urlencoded({extended: false}));
-  
+  app.post("/name", (req, res) => {
+	  req.body({
+		  name: `${firstName} ${lastName}
+		});
+  });
 
 
 
