@@ -59,8 +59,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.post("/name", (req, res) => {
 	 let firstName = req.body.first;
 	 let lastName = req.body.last;
-	 req.json({
-		 name: `${firstName} ${lastName}
+	 res.json({
+		 name: `${firstName} ${lastName}`
 	});
 })
 
