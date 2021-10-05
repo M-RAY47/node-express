@@ -50,16 +50,19 @@ app.get("/name", (req, res) => {
 // Using template literature
 	 res.json({
       name: `${firstName} ${lastName}`
-      });
-  });
+	});
+})
 
   // using body-parser to parse some string values
-  app.use(bodyParser.urlencoded({extended: false}));
-  app.post("/name", (req, res) => {
-	  req.body({
-		  name: `${firstName} ${lastName}
-		});
-  });
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.post("/name", (req, res) => {
+	 let firstName = req.body.first;
+	 let lastName = req.body.last;
+	 req.json({
+		 name: `${firstName} ${lastName}
+	});
+})
 
 
 
